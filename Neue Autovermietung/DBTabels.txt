@@ -1,0 +1,37 @@
+ 
+  CREATE TABLE `autovermietung`.`buchung` (`BuchungsID` INT NOT NULL AUTO_INCREMENT , `AutoID` INT NOT NULL ,
+  `KundeID` INT NOT NULL , `ZID` INT NOT NULL , `StartDatum` DATE NOT NULL , `Enddatum` 
+  DATE NOT NULL , PRIMARY KEY (`BuchungsID`)) ENGINE = InnoDB;
+ 
+  CREATE TABLE `autovermietung`.`kunde` (`KundeID` INT NOT NULL AUTO_INCREMENT , `Adresse` VARCHAR NOT NULL , `Geburtstag` 
+  DATE NOT NULL , `Nachname` VARCHAR NOT NULL , `PLZ` INT NOT NULL , `Vorname` VARCHAR NOT NULL , 
+  `ZID` INT NOT NULL , PRIMARY KEY (`KundeID`)) ENGINE = InnoDB;
+ 
+
+INSERT INTO buchung (AutoID, BuchungsID, StartDatum, Enddatum, KundeID, ZID)
+VALUES (1, 11, "22.06.2022", 3, 3); 
+INSERT INTO buchung (AutoID, BuchungsID, Datum, KundeID, ZID)
+VALUES (1, 11, 2022-06-24, 3, 3); 
+
+
+INSERT INTO kunde (Adresse, Geburtstag, Nachname, PLZ, Vorname, ZID) 
+VALUES ("Uhlandstraße 47", 2003-10-10, "Preis", 74243, "Nico", 1); 
+INSERT INTO kunde (Adresse, Geburtstag,  Nachname, PLZ, Vorname, ZID) 
+VALUES ("Stuttgarterstraße 17", 2000-09-08, "Bundschuh", 74072, "Benjamin", 2); 
+
+
+INSERT INTO zahlungsdaten (Ablaufdatum, KreditkartenNR, KundeID, NameKI, ZID) 
+VALUES (2027-09-09, 1357643295032434, 1, "Nico Preis", 1) ;
+INSERT INTO zahlungsdaten (Ablaufdatum, KreditkartenNR, KundeID, NameKI, ZID) 
+VALUES (2026-08-05, 2327643395042435, 2, "Benjamin Bundschuh", 2) 
+
+
+127.0.0.1/autovermietung/buchung/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=autovermietung&table=buchung
+Ihr SQL-Befehl wurde erfolgreich ausgeführt.
+
+SHOW CREATE TABLE buchung;
+
+
+
+buchung	CREATE TABLE `buchung` (
+  `BuchungsID` int(11) NO...	
